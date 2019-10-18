@@ -5,7 +5,7 @@ import ec2 = require('@aws-cdk/aws-ec2');
 import ecs = require('@aws-cdk/aws-ecs');
 import ecsPatterns = require('@aws-cdk/aws-ecs-patterns')
 
-export class CjwsStack extends cdk.Stack {
+export class Ws2Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -15,25 +15,23 @@ export class CjwsStack extends cdk.Stack {
       natGateways: 1
     })
     const cluster = new ecs.Cluster(this, 'Cluser', {vpc})
-
-    const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
-      memoryLimitMiB: 512,
-      cpu: 256,
-    })
-
-    const web = taskDefinition.addContainer('web', {
-      image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample"),
-    }) 
-
-    new ecsPatterns.ApplicationLoadBalancedFargateService(this, 'Service4', {
+    new ecsPatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
       cluster,
-      taskDefinition
+      memoryLimitMiB: 1024,
+      cpu: 512,
+      taskImageOptions: {
+        image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample"),
+      },
     });
 
-    new ecsPatterns.ApplicationLoadBalancedFargateService(this, 'Service3', {
-      cluster,
-      taskDefinition
-    });
 
+    new ecsPatterns.ApplicationLoadBalancedFargateService(this, 'Service2', {
+      cluster,
+      memoryLimitMiB: 1024,
+      cpu: 512,
+      taskImageOptions: {
+        image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample"),
+      },
+    });
   }
 }
