@@ -1,0 +1,70 @@
+{
+  "vpc-provider:account=374801192098:filter.isDefault=true:region=us-east-1": {
+    "vpcId": "vpc-3c33cc46",
+    "availabilityZones": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c",
+      "us-east-1d",
+      "us-east-1e",
+      "us-east-1f"
+    ],
+    "publicSubnetIds": [
+      "subnet-ee62d7c0",
+      "subnet-cb5a2481",
+      "subnet-76b8132a",
+      "subnet-86349de1",
+      "subnet-d3fb04ed",
+      "subnet-7a6c0575"
+    ],
+    "publicSubnetNames": [
+      "Public"
+    ],
+    "publicSubnetRouteTableIds": [
+      "rtb-8adc61f5",
+      "rtb-8adc61f5",
+      "rtb-8adc61f5",
+      "rtb-8adc61f5",
+      "rtb-8adc61f5",
+      "rtb-8adc61f5"
+    ]
+  },
+  "vpc-provider:account=374801192098:filter.isDefault=true:region=us-west-2": {
+    "vpcId": "vpc-dfff03a7",
+    "availabilityZones": [
+      "us-west-2a",
+      "us-west-2b",
+      "us-west-2c",
+      "us-west-2d"
+    ],
+    "publicSubnetIds": [
+      "subnet-62fc9629",
+      "subnet-4a581033",
+      "subnet-ef144eb5",
+      "subnet-05429f2e"
+    ],
+    "publicSubnetNames": [
+      "Public"
+    ],
+    "publicSubnetRouteTableIds": [
+      "rtb-250ed25e",
+      "rtb-250ed25e",
+      "rtb-250ed25e",
+      "rtb-250ed25e"
+    ]
+  },
+  "availability-zones:account=374801192098:region=us-west-2": [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"
+  ],
+  "availability-zones:account=374801192098:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ]
+}
