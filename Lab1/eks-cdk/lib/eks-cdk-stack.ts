@@ -14,16 +14,20 @@ export class EksCdkStack extends Stack {
       region: 'us-east-1',
       account: '374801192098'
     };
-    const stack = new Stack(app, 'EksStack', { env });
+
+    // vpc create stack
+
     
-    const vpc = Vpc.fromLookup(stack, 'EksStack/NewVpc', { isDefault: false});  
+    // eks cfn stack
+    const eksStack = new Stack(app, 'EksStack', { env });
+    const vpc = Vpc.fromLookup(eksStack, 'EksStack/NewVpc', { isDefault: false});  
 
     // create admin
-    const clusterAdmin = new Role(stack, 'AdminRole', {
+    const clusterAdmin = new Role(eksStack, 'AdminRole', {
       assumedBy: new AccountRootPrincipal()
     })
 
-    const cluster = new Cluster(stack, 'EksCluster', {
+    const cluster = new Cluster(eksStack, 'EksCluster', {
       vpc,
       defaultCapacity: 1,
       mastersRole: clusterAdmin,
