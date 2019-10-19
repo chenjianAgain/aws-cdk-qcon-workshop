@@ -17,8 +17,8 @@ export class Ws3Stack extends cdk.Stack {
       account: '374801192098'
     };
 
-    const stack = new cdk.Stack(app, 'VPC-EKS', { env });
-    const vpc = new ec2.Vpc(stack, 'VPC-EKS', {
+    const stack = new cdk.Stack(app, 'EksStack', { env });
+    const vpc = new ec2.Vpc(stack, 'NewVpc', {
       cidr: '192.168.0.0/16',
       natGateways: 1
     })   
