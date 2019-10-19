@@ -16,9 +16,7 @@ export class Ws4Stack extends cdk.Stack {
     };
 
     const stack = new cdk.Stack(app, 'FargateAlbSvc', { env });
-    const vpc = new Vpc(stack, 'NewVpc', {
-      cidr: '192.168.0.0/16'
-    })    
+    const vpc = Vpc.fromLookup(stack, 'EksStack/NewVpc', { isDefault: false})    
     const cluster = new Cluster(stack, 'Cluster', { vpc });
 
     const taskDefinition = new TaskDefinition(stack, 'Task', {

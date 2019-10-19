@@ -66,5 +66,39 @@
     "us-east-1d",
     "us-east-1e",
     "us-east-1f"
-  ]
+  ],
+  "vpc-provider:account=374801192098:filter.isDefault=false:region=us-east-1": {
+    "vpcId": "vpc-093844517e0a96c86",
+    "availabilityZones": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c"
+    ],
+    "privateSubnetIds": [
+      "subnet-0de277f2d13340ac1",
+      "subnet-0f2fa6fa216351525",
+      "subnet-08b7a0ab2bdf12650"
+    ],
+    "privateSubnetNames": [
+      "Private"
+    ],
+    "privateSubnetRouteTableIds": [
+      "rtb-056f0ec09a3607bb8",
+      "rtb-0c67eaa6dbffc1c50",
+      "rtb-0b53ee93a7c203e77"
+    ],
+    "publicSubnetIds": [
+      "subnet-04226e59eead670b4",
+      "subnet-0ed81d199a448dfa5",
+      "subnet-02b7777703e5c559d"
+    ],
+    "publicSubnetNames": [
+      "Public"
+    ],
+    "publicSubnetRouteTableIds": [
+      "rtb-0a33bf56b5ba2c1fd",
+      "rtb-06a2c3975ddf8f9ce",
+      "rtb-0751f97d45cb4f87c"
+    ]
+  }
 }
